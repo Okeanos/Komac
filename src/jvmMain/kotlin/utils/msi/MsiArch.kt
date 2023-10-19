@@ -17,7 +17,7 @@ class MsiArch(private val database: Pointer) {
     val architecture: InstallerManifest.Installer.Architecture? by lazy {
         when {
             Platform.isWindows() -> getWindowsArchitecture()
-            Platform.isLinux() -> getLinuxArchitecture()
+            Platform.isLinux() || Platform.isMac() -> getUnixArchitecture()
             else -> null
         }?.split(';')?.first()?.toArchitecture()
     }
@@ -48,7 +48,7 @@ class MsiArch(private val database: Pointer) {
         return if (result == WinError.ERROR_SUCCESS) Native.toString(szBuf) else null
     }
 
-    private fun getLinuxArchitecture(): String {
+    private fun getUnixArchitecture(): String {
         val libMsi = LibMsi.INSTANCE
         val gObject = GObject.INSTANCE
 

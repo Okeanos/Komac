@@ -8,4 +8,6 @@ actual object Platform {
     actual fun isWindows(): Boolean = Platform.osFamily == OsFamily.WINDOWS
 
     actual fun isLinux(): Boolean = Platform.osFamily == OsFamily.LINUX
+
+    actual fun isMac(): Boolean = Platform.osFamily == OsFamily.MACOSX
 }

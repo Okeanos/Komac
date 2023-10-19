@@ -32,6 +32,8 @@ scoop install komac
 
 It is recommended to use the cross-platform JAR for Linux and macOS. Installers are although available for these platforms but there's no guarantee on their working state. The JAR can be used with the following command:
 
+In order to work with MSI packages an installation of [`msitools`](https://wiki.gnome.org/msitools) is required.
+
 ```bash
 java -jar komac.jar
 ```

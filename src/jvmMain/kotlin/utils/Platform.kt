@@ -6,4 +6,6 @@ actual object Platform {
     actual fun isWindows(): Boolean = Platform.isWindows()
 
     actual fun isLinux(): Boolean = Platform.isLinux()
+
+    actual fun isMac(): Boolean = Platform.isMac()
 }

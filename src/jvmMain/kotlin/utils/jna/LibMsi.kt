@@ -22,7 +22,7 @@ interface LibMsi : Library {
     fun libmsiSummaryInfoGetString(summaryInformation: Pointer, prop: Int, error: PointerByReference): String
 
     companion object {
-        private const val LIBMSI = "libmsi"
+        private const val LIBMSI = "msi-1.0"
         const val DB_FLAGS_READONLY = 1
         val INSTANCE: LibMsi = Native.load(
             LIBMSI,
